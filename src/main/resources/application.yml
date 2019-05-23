@@ -1,0 +1,16 @@
+spring:
+  batch:
+    job:
+      job-name: fooJob
+      step-name: fooStep
+      chunk-size: 2
+      filereader:
+        resource : /data/input.csv
+        name: fooReader
+        names : foo,bar,baz
+      filewriter :
+        resource : file:/Users/mminella/tmp/output.scsv
+        name : fooWriter
+        delimiter : ;
+        names : baz,bar,foo
+        append : true
